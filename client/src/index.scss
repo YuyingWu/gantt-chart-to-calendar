@@ -1,0 +1,282 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f7ed;
+}
+
+#app {
+  > .container {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    font-size: 14px;
+    border: 1px solid #dbdfd6;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+}
+
+a {
+  color: #527dfd;
+  text-decoration: none;
+
+  &:hover {
+    color: #ff7300;
+  }
+}
+
+#header {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+
+  .el-form-item {
+    margin-bottom: 0;
+  }
+}
+
+#content {
+  display: flex;
+  position: relative;
+}
+
+.no-result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 2000;
+
+  p {
+    text-align: center;
+    color: #999;
+  }
+}
+
+.mod-calendar {
+  padding: 10px;
+  width: 80%;
+  background-color: #fff;
+  box-sizing: border-box;
+
+  .item {
+    flex: 1;
+  }
+
+  .date {
+    height: 100px;
+    border: 1px solid #ccc;
+    border-width: 1px 1px 0 0;
+
+    .info {
+      padding: 6px 8px;
+      text-align: right;
+      color: #888;
+    }
+
+    &.disabled .info {
+      color: #bbb !important;
+    }
+
+    &:first-child {
+      .info {
+        color: #c43515;
+      }
+    }
+
+    &:nth-child(7) {
+      border-width: 1px 0 0;
+
+      .info {
+        color: #c43515;
+      }
+    }
+
+    &.today {
+      .info span {
+        display: inline-block;
+        height: 20px;
+        line-height: 20px;
+        width: 20px;
+        border-radius: 100%;
+        color: #fff;
+        text-align: center;
+        background-color: #ec4d3d;
+      }
+    }
+  }
+
+  .week {
+    display: flex;
+    background-color: #ed5e3d;
+
+    .item {
+      height: 24px;
+      line-height: 24px;
+      text-align: center;
+      color: #fff;
+    }
+  }
+
+  .row {
+    position: relative;
+    display: flex;
+  }
+
+  .tasks {
+    position: absolute;
+    top: 28px;
+    left: 0;
+    width: 100%;
+  }
+
+  .task {
+    position: absolute;
+    margin-bottom: 2px;
+    width: 14.3%;
+    background-color: rgba(249, 67, 64, 0.2);
+
+    span {
+      position: relative;
+      display: block;
+      padding: 0 3px;
+      height: 20px;
+      line-height: 20px;
+      overflow: hidden;
+      font-size: 12px;
+      color: #333;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      cursor: pointer;
+
+      &.milestone {
+        text-overflow: unset;
+      }
+    }
+
+    .done {
+      position: absolute;
+      top: 16px;
+      left: 0;
+      height: 4px;
+    }
+
+    .product {
+      float: left;
+      margin-right: 4px;
+      width: 18px;
+      height: 18px;
+      border-radius: 9px;
+      text-align: center;
+      font-style: normal;
+      color: #fff;
+    }
+
+    .icon-qizi {
+      float: left;
+      margin-left: -4px;
+
+      &.icon-jointDebug {
+        color: #0f0;
+      }
+
+      &.icon-test {
+        color: #00f;
+      }
+
+      &.icon-publish {
+        color: #f00;
+      }
+    }
+  }
+}
+
+.mod-detail {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 20%;
+  height: 650px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+
+  h3 {
+    margin: 0;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .cell-content {
+    position: relative;
+    flex: 1;
+  }
+
+  dl {
+    margin: 10px 0;
+  }
+
+  dt {
+    float: left;
+    color: #777;
+  }
+
+  dd {
+    margin: 0;
+    color: #444;
+  }
+
+  .group {
+    &::after {
+      display: table;
+      content: " ";
+      clear: both;
+    }
+
+    .title {
+      padding: 6px 0;
+      color: #333;
+
+      &::before {
+        float: left;
+        margin-right: 3px;
+        height: 20px;
+        width: 3px;
+        background-color: #ff7300;
+        content: " ";
+      }
+    }
+
+    dl {
+      float: left;
+      width: 50%;
+    }
+
+    dt {
+      float: none;
+    }
+  }
+}
+
+.mod-plan {
+  padding: 0 20px;
+
+  h3 {
+    margin: 0 0 10px;
+    font-size: 16px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    line-height: 20px;
+    list-style-type: none;
+  }
+}
